@@ -1,0 +1,42 @@
+%-------------------------------------------------------------------
+% Fájl: main.tex
+%-------------------------------------------------------------------
+
+% Packagek és dokumentum konfiguráció
+\input{contents/00_preambulum.tex}
+\input{contents/00_commands.tex}
+
+%-------------------------------------------------------------------
+% Beállítások
+
+
+%-------------------------------------------------------------------
+% Dokumentum adatok
+%% Feliratok
+\newcommand\Program{Program}
+\newcommand\Term{Term}
+\newcommand\Title{Subject}
+\newcommand\Name{Author}
+\newcommand\Neptun{}
+\newcommand\Course{Course}
+
+
+%-------------------------------------------------------------------
+% Dokumentum kezdete
+\begin{document}
+
+% Címlap és tartalomjegyzék
+\input{contents/01_titlepage.tex}
+\input{contents/02_contentpage.tex}
+
+%-------------------------------------------------------------------
+% Fejezetek
+\subfile{topics/1_topic.tex}
+
+
+%-------------------------------------------------------------------
+% Irodalomjegyzék
+% \input{contents/03_bib.tex}
+%-------------------------------------------------------------------
+
+\end{document}

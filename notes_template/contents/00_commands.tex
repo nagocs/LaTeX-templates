@@ -1,0 +1,91 @@
+%-------------------------------------------------------------------
+% Fájl: 00_commands.tex
+%-------------------------------------------------------------------
+
+% Parancsok
+%% Szövegtagolás
+\newenvironment{step}[2]{\vspace{3pt} #1 \textit{#2.}}{}
+\newcommand{\quantity}[3]{\begin{equation*} #1 \quad \textrm{$\left[\:#2\:\right]$} \end{equation*}}
+
+%% Matematikai környezetek
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem*{example}{Example}
+\newtheorem*{remark}{Remark}
+
+%% Kiemelés
+\newtcolorbox{alertblock}[1][]{
+  colback=red!5!white,
+  colframe=red!70!black,
+  fonttitle=\bfseries,
+  title={#1},
+  sharp corners
+}
+\newtcolorbox{block}[1][]{
+  colback=blue!30!black!10!white,
+  colframe=blue!30!black,
+  fonttitle=\bfseries,
+  title={#1},
+  sharp corners,
+  before skip = 6pt,
+  after skip = 12pt,
+  enhanced jigsaw,
+  breakable
+}
+\newtcolorbox[auto counter,number within=section]{exampleblock}[1]{
+  coltitle=black,
+  colback=green!30!black!10!white,
+  colframe=green!30!black,
+  fonttitle=\bfseries,
+  title={Example~\thetcbcounter: #1},
+  attach title to upper,
+  after title={\newline},
+  sharp corners
+}
+
+%% Szimbólumok
+%%% Alapok
+\newcommand{\jo}{j\omega}
+\newcommand{\dd}[1]{\:\mathrm{d}#1}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\cross}{\times}
+
+%%% Transzformációk
+\newcommand{\Tr}[2]{\mathbf{#1}\left\{#2\right\}}
+\newcommand{\invTr}[2]{\mathbf{#1}^{-1}\left\{#2\right\}}
+
+%%% Komplex számok
+\renewcommand{\Re}[1]{\textrm{Re}\left\{#1\right\}}
+\renewcommand{\Im}[1]{\textrm{Im}\left\{#1\right\}}
+
+%%% Matematikai operátorok
+\DeclareMathOperator{\grad}{\mathbf{grad}}
+\let\div\relax
+\DeclareMathOperator{\div}{\mathbf{div}}
+\DeclareMathOperator{\rot}{\mathbf{rot}}
+\DeclareMathOperator{\laplacian}{\Delta}
+\DeclareMathOperator{\del}{\nabla}
+\DeclareMathOperator{\tr}{\mathbf{tr}}
+\DeclareMathOperator{\dev}{dev}
+\DeclareMathOperator{\sph}{sph}
+
+%%% Kontinuummechanika specifikus
+\newcommand{\motion}[1]{\boldsymbol\chi\left(#1\right)}
+\newcommand{\diag}[1]{\mathbf{diag}\left(#1\right)}
+\newcommand{\invmotion}[1]{\boldsymbol\chi^{-1}\left(#1\right)}
+\DeclareMathOperator{\Grad}{\mathbf{Grad}}
+\DeclareMathOperator{\Div}{\mathbf{Div}}
+\DeclareMathOperator{\Rot}{\mathbf{Rot}}
+\newcommand{\obj}[2][\empty]{\mathring{#2}^{#1}}
+
+%% Egyenlet levezetés
+\newcommand{\eqline}{\noalign{\smallskip} \hline \noalign{\smallskip}}
+\newcommand{\eqcomment}[1]{& \triangleright~ & #1}
+\newenvironment{eqwhere}[2]
+{\par\vspace{-0.5\abovedisplayskip}\begin{tabular}{C{0.25cm}||C{1.5cm}L{#1}L{#2}}}
+{\end{tabular}\par\vspace{\belowdisplayskip}}
+
+%% Egyéb
+\newcommand*\circled[1]{\begin{tikzpicture}[baseline=(C.base)] \node[draw,circle,inner sep=1pt](C) {#1}; \end{tikzpicture}}

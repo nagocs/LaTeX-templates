@@ -1,0 +1,93 @@
+%-------------------------------------------------------------------
+% Fájl: 00_preambulum.tex
+%-------------------------------------------------------------------
+
+% Packagek
+%% Dokumentum konfiguráció
+\documentclass[fleqn,10pt]{article} % dokumentum formátum
+\usepackage[english]{babel} % dokumentum nyelve
+\usepackage{t1enc} % dokumentum kódolása
+\usepackage{geometry} % dokumentum formátum
+\usepackage{hyperref} % hivatkozások
+\usepackage[backend=biber,style=numeric,sorting=none]{biblatex} % irodalomjegyzék
+
+%% Ábrák, grafikák
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{Tikz}
+\usepackage{pdfpages}
+
+%% Matematikai és fizikai írásmód
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd} % minden matek
+\usepackage{esint} % integrálok
+\usepackage{nicefrac}
+\usepackage{mathtools}
+\usepackage{siunitx}
+
+%% Fejléc
+\usepackage{fancyhdr}
+
+%% Tagolás
+\usepackage{titlesec}
+\usepackage{csquotes}
+
+%% Táblázatok
+\usepackage{booktabs}
+\usepackage{multirow}
+
+%% Szövegkiemelések
+\usepackage[breakable,listings,skins]{tcolorbox} % színes keret
+\usepackage{framed} % keret
+
+%% Dokumentum tagolás
+\usepackage{subfiles}
+
+%-------------------------------------------------------------------
+% Dokumentum beállítások
+%% Dokumentum formátum
+\geometry{a5paper, total={130mm,175mm}, left=10mm, top=15mm}
+\setlength\parindent{0pt}
+\pagestyle{empty}
+
+%% Fejléc beállítása
+\pagestyle{fancyplain}
+\headheight 35pt
+\renewcommand{\headrulewidth}{0pt}
+\rhead{\leftmark}
+\chead{}
+\lhead{\empty}
+\lfoot{}
+\cfoot{\small\thepage}
+\rfoot{}
+\headsep 1.5em
+
+%% Mértékegységek formátuma
+\sisetup{exponent-product = \cdot,
+         output-product = \cdot,
+         per-mode=fraction}
+
+%% Irodalomjegyék beállítása
+\addbibresource{contents/literature.bib}
+
+%% Táblázat formátum beállítása
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\renewcommand{\arraystretch}{1.25}
+
+%% Számozások beállítása fejezetenként
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+%% Fejezet címek beállításai
+%\titlelabel{\thetitle.\quad}
+
+%% Felsorolási szintek
+\renewcommand\labelitemii{$\to$}
+\renewcommand\labelitemiii{-}
+
+%% Ábrák útvonala
+\graphicspath{{../figures/}}

@@ -16,7 +16,10 @@
 \usepackage{caption}
 \usepackage{tikz}
 \usepackage{pdfpages}
-\usepackage{structmech}
+
+%% Táblázatok
+\usepackage{multirow}
+\usepackage{booktabs}
 
 %% Matematikai és fizikai írásmód
 \usepackage{amsmath,amsthm,amsfonts,amssymb,amscd} % matek
@@ -31,7 +34,10 @@
 %% Dokumentumtagolás
 \usepackage{titlesec}
 \usepackage{csquotes}
-\usepackage{booktabs}
+
+%% Szövegtagolás
+\usepackage{enumitem}
+\usepackage[breakable,listings,skins]{tcolorbox}
 
 %% Animáció
 %\usepackage{animate}
@@ -100,8 +106,20 @@
 \renewcommand{\d}[1]{\mathrm{d}#1}
 \renewcommand{\vec}[1]{\mathbf{#1}}
 
+%% Kiemelés
+\newtcolorbox{block}[1][]{
+  colback=blue!30!black!10!white,
+  colframe=blue!30!black,
+  fonttitle=\bfseries,
+  title={#1},
+  sharp corners,
+  before skip = 6pt,
+  after skip = 12pt,
+  enhanced jigsaw,
+  breakable
+}
+
 %% Egyéb parancsok
-\newcommand{\specialcell}[2][c]{\begin{tabular}[#1]{c}#2\end{tabular}}
 \newcommand*\circled[1]{\begin{tikzpicture}[baseline=(C.base)] \node[draw,circle,inner sep=2pt](C) {#1}; \end{tikzpicture}}
 
 
